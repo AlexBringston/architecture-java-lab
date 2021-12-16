@@ -5,27 +5,22 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "humans")
+@Entity(name = "illnesses")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Patient {
-
+public class Illness {
     private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
 
     private String name;
-    private String surname;
 
-    private Long numOfIllnesses;
+    @OneToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
-    @ManyToOne
-    @JoinColumn(name="department_id", nullable = false)
-    private Department department;
-
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "illness")
     private List<PatientIllness> patientIllnesses;
-
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital of Andrew Dia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Philosopher:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="body">
+<div th:replace="fragments/header :: header"></div>
+<section class="content">
+    <div class="container">
+        <div class="links-wrap">
+            <div class="go-to">
+                <p>“E-Health” system</p>
+                <div class="links">
+                    <a th:href="@{/regions}">Regions</a>
+                    <a th:href="@{/departments}">Departments</a>
+                    <a th:href="@{/illnesses}">Illnesses</a>
+                </div>
+                <div class="links">
+                    <a th:href="@{/patients}">Current patients</a>
+                    <a th:href="@{/patients/illnesses}">Longest lasting ills</a>
+                </div>
+                <div class="links">
+                    <a th:href="@{/illnesses/count/}">Illnesses present</a>
+                    <a th:href="@{/illnesses/count/byCategory}">Illnesses by category</a>
+                    <a th:href="@{/illnesses/count/byRegion}">Illnesses by region</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>2021</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

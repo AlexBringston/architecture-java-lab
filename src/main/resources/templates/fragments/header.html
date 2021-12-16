@@ -1,0 +1,18 @@
+<header class="header" th:fragment="header">
+    <div class="container">
+        <div class="nav">
+            <a th:href="@{/}"><div class="logo"><img th:src="@{/img/logo.svg}" alt=""></div></a>
+            <form class="search" th:action="@{/patients}">
+                <input type="text" placeholder="Search patients" name="query">
+                <input type="submit" value="">
+            </form>
+            <form class="select">
+                <select class="localization">
+                    <option value="ukr">Ukrainian</option>
+                    <option value="en">English</option>
+                </select>
+                <input type="submit" action="" value="✓">
+            </form>
+        </div>
+    </div>
+</header>

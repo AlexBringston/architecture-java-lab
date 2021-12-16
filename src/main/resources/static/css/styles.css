@@ -1,0 +1,362 @@
+/*Обнуление*/
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,*:before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 18px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea, select, option{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+select{
+    margin: 0;
+}
+button, input[type="submit"]{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px 0 15px;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    background: url('../img/mainBg.jpg') center/cover no-repeat fixed;
+    font-family: Ubuntu;
+}
+input[type="text"], input[type="number"], input[type="email"]{
+    height: 42px;
+    border: 1px solid white;
+    padding: 0 0 0 10px;
+}
+
+/*---Header---*/
+.header{
+    display: flex;
+    flex: 0 0 80px;
+    background: #42B6E8;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    font-family: Oswald;
+}
+.logo{
+    height: 60px;
+}
+.logo img{
+    height: 100%;
+}
+.search{
+    display: flex;
+    justify-content: flex-start;
+    font-weight: bold;
+}
+.search input[type="text"]{
+    width: 388px;
+    font-size: 20px;
+    color: white;
+    background: none;
+    font-weight: bold;
+}
+.search input[type="submit"]{
+    width: 42px;
+    height: 42px;
+    border: 1px solid white;
+    background: url('../img/search.jpg') center / cover;
+    transition: all 0.5s ease;
+}
+.search input::-webkit-input-placeholder { color: white; }
+.search input::-moz-placeholder { color: white; }
+.select{
+    display: flex;
+    justify-content: flex-start;
+}
+.select select option{
+    background: #42B6E8;
+}
+.localization{
+    width: 160px;
+    height: 42px;
+    border: 1px solid white;
+    padding: 0 10px 0 10px;
+    background: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.select input[type="submit"]{
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+/*--------------------*/
+
+/*---Main Content---*/
+.content{
+    display: flex;
+    flex: 1 1 auto;
+}
+.content .container{
+    background: rgba(249, 240, 240, 0.93);
+    height: 100%;
+}
+.links-wrap{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.content-wrap{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.go-to{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.go-to p{
+    margin: -60px 0 60px 0;
+    text-align: center;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    color: #105775;
+}
+.links{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.links a{
+    padding: 25px;
+    text-align: center;
+    color: black;
+    background: white;
+    border: 4px solid #42B6E8;
+    width: 200px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+/*--------------------*/
+
+/*---Search Features---*/
+.search-content{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 60px 0 0 0;
+}
+.search-content p{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    color: #105775;
+    margin: 0 0 40px 0;
+}
+.search-forms{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+}
+.search-certain{
+    display: flex;
+    justify-content: flex-start;
+}
+.search-certain input[type="text"]{
+    width: 400px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 2px solid #42B6E8;
+    font-size: 20px;
+}
+.search-certain input[type="submit"], .search-all input[type="submit"]{
+    width: 120px;
+    height: 40px;
+    color: #42B6E8;
+    font-weight: bold;
+    background: #FFFFFF;
+    border: 2px solid #42B6E8;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+.search-all input[type="submit"]{
+    width: 220px;
+}
+.search-field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+    font-size: 16px;
+    background: white;
+    border: 2px solid #42B6E8;
+    position: relative;
+}
+.result-header{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.result{
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+.result-field{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #42B6E8;
+    height: 60px;
+}
+.result-field.top{
+    border-top: none;
+    background: white;
+}
+.result-field.id{
+    width: 10%;
+    border-left: none;
+}
+.result-field.beds{
+    width: 25%;
+}
+.result-field.district{
+    width: 40%;
+    border-right: none;
+}
+.result-header span{
+    color: black;
+    font-size: 20px;
+    height: 20px;
+    font-weight: bold;
+    color: #105775;
+}
+.result span{
+    color: black;
+    font-size: 16px;
+    height: 16px;
+}
+/*.result:last-child .result-field{
+    border-bottom: none;
+}*/
+/*--------------------*/
+
+/*---Adding New Patient---*/
+.new-patient{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.new-patient input[type="text"], .new-patient input[type="number"]{
+    width: 60%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 2px solid #42B6E8;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+}
+.new-patient input[type="submit"]{
+    width: 200px;
+    height: 40px;
+    color: #42B6E8;
+    font-weight: bold;
+    background: #FFFFFF;
+    border: 2px solid #42B6E8;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+/*--------------------*/
+
+/*---Foter---*/
+.footer{
+    display: flex;
+    flex: 0 0 60px;
+    background: #42B6E8;
+}
+.footer-content{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Oswald;
+    font-weight: bold;
+}
+/*--------------------*/
+
+/*---Effects---*/
+input[type="text"]:focus{
+    background: #C2EDFF;
+}
+input[type="submit"]:hover, .search-all input[type="submit"]:hover{
+    color: white;
+    background: #42B6E8;
+}
+.search input[type="text"]:focus, .select select:focus{
+    background: #65D1FF;
+}
+.search input[type="submit"]:hover{
+    background: url('../img/search-hov.jpg') center / cover;
+}
+.select input[type="submit"]:hover{
+    background: #65D1FF;
+}
+.links a:hover{
+    color: white;
+    background: #42B6E8;
+    border: 4px solid white;
+    box-shadow: 6px 6px 9px rgba(0, 58, 51, 0.25);
+}
+/*--------------------*/
