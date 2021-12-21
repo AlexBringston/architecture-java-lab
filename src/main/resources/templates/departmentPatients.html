@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital of Andrew Dia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Philosopher:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="body">
+<div th:replace="fragments/header :: header"></div>
+<section class="content">
+    <div class="container">
+        <div class="content-wrap">
+            <div class="search-content">
+                <p th:text="${#strings.capitalize(action)}">Text</p>
+                <div class="search-forms">
+                    <form th:action="@{|${action}|}" class="search-certain">
+                        <input type="number" placeholder="Enter a number " name="id">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+                <div class="search-field">
+                    <div class="result-header">
+                        <div class="result-field top id" th:style="|width: calc(100% / ${headers.size()})|"
+                             th:each="header : ${headers}"><span
+                                th:text="${header}">Text
+							</span></div>
+                    </div>
+                    <a th:each="content : ${contents}" th:href="@{/departments/{id}/patients(id=${content.id})}">
+                    <div class="result">
+
+                            <div class="result-field id" th:style="|width: calc(100% / ${headers.size()})|"
+                                 th:each="field: ${fields}">
+                                <span th:unless="${field == ''}" th:text="${content.__${field}__}">Text</span>
+                            </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>2021</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

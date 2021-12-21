@@ -41,7 +41,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
 .container{
-    width: 1170px;
+    width: 1300px;
     margin: 0 auto;
     padding: 0 15px 0 15px;
 }
@@ -115,6 +115,27 @@ input[type="text"], input[type="number"], input[type="email"]{
     font-size: 20px;
     font-weight: bold;
 }
+
+.search-field a{
+    width: 100%;
+}
+.search-field form {
+    width: 100%;
+    display: flex;
+}
+.illnessCount{
+    width: 160px;
+    height: 42px;
+    border: 1px solid white;
+    padding: 0 -10px 0 10px;
+    background: white;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.select.illnessCount select option{
+    background: #42B6E8;
+}
 .select input[type="submit"]{
     width: 42px;
     height: 42px;
@@ -122,6 +143,17 @@ input[type="text"], input[type="number"], input[type="email"]{
     border: 1px solid white;
     background: none;
     color: white;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.illnessCount.select input[type="submit"]{
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    border: 1px solid #42B6E8;
+    background: white;
+    color: #42B6E8;
     font-weight: bold;
     transition: all 0.5s ease;
 }
@@ -165,7 +197,7 @@ input[type="text"], input[type="number"], input[type="email"]{
 }
 .links{
     display: flex;
-    width: 70%;
+    width: 85%;
     justify-content: space-between;
     margin-bottom: 30px;
 }

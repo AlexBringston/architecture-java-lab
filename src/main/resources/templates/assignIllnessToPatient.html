@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital of Andrew Dia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Philosopher:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="body">
+<div th:replace="fragments/header :: header"></div>
+<section class="content">
+    <div class="container">
+        <div class="content-wrap">
+            <div class="search-content">
+                <div class="search-forms" th:unless="${option == 'true'}">
+                    <a th:href="@{/choosePatient/{id}(id=${patient.id})}">Add illness</a>
+                </div>
+                <div th:text="|Name: ${patient.name}|"></div>
+                <div th:text="|Surname: ${patient.surname}|">Text</div>
+                <div th:text="|Age: ${patient.age}|">Text</div>
+                <div th:text="|Phone: ${patient.phoneNumber}|">Text</div>
+                <div th:text="|Number of illnesses: ${patient.numOfIllnesses}|">Text</div>
+
+                <div class="search-field">
+                    <div class="result-header">
+                        <div class="result-field top id" th:style="|width: calc(100% / ${headers.size()})|"
+                             th:each="header : ${headers}"><span th:text="${header}">Text</span>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="patient" th:value="${patient}">
+                    <div class="result" th:each="content : ${contents}">
+                        <form th:action="@{/choosePatient}" th:object="${patientIllness}" method="post">
+                            <input type="hidden" th:if="${patientIllness != null}" name="illness.id"
+                                   th:value="${content.id}">
+                            <input type="hidden" th:if="${patientIllness != null}" name="startedAt"
+                                   th:value="${startedAt}">
+                            <div class="result-field id" th:style="|width: calc(100% / ${headers.size()})|"
+                                 th:each="field: ${fields}">
+                            <span th:unless="${field == '' || field =='status' || field == 'href' || field == 'delete'}"
+                                  th:text="${content.__${field}__}">Text</span>
+                                <input th:if="${field == 'status'}" type="number" min="1" max="3"
+                                       style="background-color: #C2EDFF; width: 100%" name="illnessStatus" required>
+                                <input th:if="${field == 'href'}" type="submit" value="Add illness">
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>2021</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

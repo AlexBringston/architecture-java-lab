@@ -20,15 +20,18 @@
                     <a th:href="@{/regions}">Regions</a>
                     <a th:href="@{/departments}">Departments</a>
                     <a th:href="@{/illnesses}">Illnesses</a>
-                </div>
-                <div class="links">
                     <a th:href="@{/patients}">Current patients</a>
-                    <a th:href="@{/patients/illnesses}">Longest lasting ills</a>
                 </div>
                 <div class="links">
+                    <a th:href="@{/patients/withIllnesses}">Longest lasting ills</a>
+                    <a th:href="@{/departments/free}">Find free departments</a>
                     <a th:href="@{/illnesses/count/}">Illnesses present</a>
-                    <a th:href="@{/illnesses/count/byCategory}">Illnesses by category</a>
-                    <a th:href="@{/illnesses/count/byRegion}">Illnesses by region</a>
+                </div>
+
+                <div class="links">
+                    <a th:href="@{/patient}">Add patient</a>
+                    <a th:href="@{/department}">Add department</a>
+                    <a th:href="@{/illness}">Add illness</a>
                 </div>
             </div>
         </div>

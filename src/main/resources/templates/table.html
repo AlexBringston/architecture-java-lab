@@ -17,7 +17,7 @@
 				<div class="search-content">
 					<p th:text="${#strings.capitalize(action)}">Text</p>
 					<div class="search-forms">
-						<form th:action="@{|${action}|}" class="search-certain">
+						<form th:action="@{|/${action}|}" class="search-certain">
 							<input type="number" placeholder="Enter a number " name="id">
 							<input type="submit" value="Search">
 						</form>

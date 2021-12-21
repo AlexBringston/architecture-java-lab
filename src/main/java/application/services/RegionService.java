@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 
@@ -43,5 +44,17 @@ public class RegionService {
                 .stream()
                 .map(this::mapToRegionDTO)
                 .collect(Collectors.toList());
+    }
+
+    public List<Region> findAll() {
+        return regionRepository.findAll();
+    }
+
+    public Region saveRegion(Region region) {
+        return regionRepository.save(region);
+    }
+
+    public Region findRegionByName(String name) {
+        return regionRepository.findRegionByName(name).orElse(null);
     }
 }

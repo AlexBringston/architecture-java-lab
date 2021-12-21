@@ -21,6 +21,8 @@ public class Illness {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     @OneToMany(mappedBy = "illness")
     private List<PatientIllness> patientIllnesses;
 }

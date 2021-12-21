@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hospital of Andrew Dia</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Philosopher:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="body">
+	<div th:replace="fragments/header :: header"></div>
+	<section class="content">
+		<div class="container">
+			<div class="content-wrap">
+				<div class="search-content">
+					<p>Register new patient</p>
+					<form class="new-patient" th:action="@{patient}" th:object="${patient}"
+						  method="post">
+						<input type="text" placeholder="Patient name"  th:field="*{name}">
+						<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+						<input type="text" placeholder="Patient surname" th:field="*{surname}">
+						<span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</span>
+						<input type="number" min="1" max="100" placeholder="Patient age" th:field="*{age}">
+						<span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</span>
+						<input type="text" maxlength="10" minlength="10" placeholder="Patient phone number"
+							   th:field="*{phoneNumber}">
+						<span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Phone number
+							Error</span>
+						<input type="number" min="1" max="100" placeholder="Department id" th:field="*{department.id}">
+						<span th:if="${#fields.hasErrors('department.id')}" th:errors="*{department.id}">Department id
+							Error</span>
+						<input type="submit" value="Create">
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<p>2021</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
